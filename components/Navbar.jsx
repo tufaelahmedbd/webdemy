@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "./Button";
 
 export default function Navbar() {
   return (
@@ -24,9 +25,7 @@ export default function Navbar() {
         </div>
 
         <div>
-          <Link href="/login" className="hover:text-white transition-colors">
-            Sign In
-          </Link>
+          <Button href="/login" placeholder="Sign in" />
         </div>
       </div>
     </div>
