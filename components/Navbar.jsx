@@ -4,7 +4,7 @@ import Button from "./Button";
 export default function Navbar() {
   return (
     <div className="h-20 bg-black text-gray-400 flex items-center">
-      <div className="wrapper flex justify-between">
+      <div className="wrapper flex justify-between items-center">
         <Link href="/" className="text-white font-bold">
           Web<span className=" text-gray-400">demy</span>
         </Link>
@@ -25,7 +25,12 @@ export default function Navbar() {
         </div>
 
         <div>
-          <Button href="/login" placeholder="Sign in" />
+          <Button
+            href="/login"
+            placeholder="Sign in"
+            color="secondary"
+            size="default"
+          />
         </div>
       </div>
     </div>
