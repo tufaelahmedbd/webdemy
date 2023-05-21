@@ -52,7 +52,7 @@ export default function CourseItem({ course }) {
             {currencyConverter(course.price)}
           </p>
           <Button
-            href={`/course/${course.id}`}
+            href={`/courses/${course.id}`}
             placeholder="View Details"
             color="primary"
             size="default"

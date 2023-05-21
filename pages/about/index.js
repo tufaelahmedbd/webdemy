@@ -3,7 +3,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div>
+    <div className=" min-h-screen">
       <div className="wrapper flex-col items-center text-center py-10 ">
         <h6 className="uppercase font-semibold  tracking-widest text-sm">
           About
