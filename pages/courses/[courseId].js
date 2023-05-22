@@ -3,6 +3,7 @@ import { getCourse } from "@/prisma/courses";
 import { currencyConverter } from "@/utils/currencyConverter";
 
 export default function CourseDetails({ course }) {
+  const handleEnroll = () => {};
   return (
     <div className="wrapper py-10 min-h-screen">
       <div
@@ -37,7 +38,12 @@ export default function CourseDetails({ course }) {
           <p className=" text-3xl font-semibold">
             Price: {currencyConverter(course.price)}
           </p>
-          <Button href="/checkout" placeholder="Enroll Now" size="full" />
+          <button
+            onClick={handleEnroll}
+            className="bg-black text-white py-3 px-6 rounded-lg w-full hover:bg-gray-700 duration-300"
+          >
+            Enroll Now
+          </button>
         </div>
       </div>
     </div>
