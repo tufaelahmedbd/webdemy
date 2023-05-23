@@ -2,6 +2,11 @@ import SectionHeader from "@/components/SectionHeader";
 import { getCourse } from "@/prisma/courses";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+
+//Stripe promise
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function CheckoutPage({ course }) {
   const { data: session } = useSession();
@@ -24,10 +29,30 @@ export default function CheckoutPage({ course }) {
     }
   }, [session]);
 
+  // Checkout handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    const stripe = await stripePromise;
+
+    //send a post req to the server
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: [course],
+      name: formData.name,
+      email: formData.email,
+      mobile: formData.mobile,
+      address: formData.address,
+      courseTitle: formData.courseTitle,
+    });
+
+    //redirect to the stripe payment
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+
+    if (result.error) {
+      console.log(result.error.message);
+    }
   };
   return (
     <div className="wrapper my-10 min-h-screen">
