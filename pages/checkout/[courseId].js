@@ -43,6 +43,7 @@ export default function CheckoutPage({ course }) {
       mobile: formData.mobile,
       address: formData.address,
       courseTitle: formData.courseTitle,
+      courseId: course.id,
     });
 
     //redirect to the stripe payment
@@ -104,6 +105,7 @@ export default function CheckoutPage({ course }) {
               type="tel"
               placeholder="+88017xxxxxxxx"
               id="mobile"
+              required
               value={formData.mobile}
               onChange={(e) =>
                 setFormData({ ...formData, mobile: e.target.value })
@@ -120,6 +122,7 @@ export default function CheckoutPage({ course }) {
               type="text"
               placeholder="75,Syl, BD"
               id="address"
+              required
               value={formData.address}
               onChange={(e) =>
                 setFormData({ ...formData, address: e.target.value })
