@@ -25,7 +25,12 @@ export default function ProfilePage({ session }) {
     return null;
   }
   return (
-    <div className="min-h-screen wrapper py-10 flex flex-col items-center">
+    <div
+      data-aos="fade-down"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+      className="min-h-screen wrapper py-10 flex flex-col items-center"
+    >
       <Image
         src={session.user.image}
         alt={session.user.name}

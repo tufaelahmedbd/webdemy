@@ -19,36 +19,66 @@ export default function CourseDetails({ course }) {
       <div
         style={{ backgroundImage: `url(${course.cover})` }}
         className="w-full h-[23rem] lg:h-[33rem] bg-no-repeat bg-cover bg-center"
+        data-aos="fade-down"
+        data-aos-delay="500"
+        data-aos-duration="1000"
       />
       <div className="mt-10 grid lg:grid-cols-2 lg:gap-10 lg:space-y-0">
         <div className=" space-y-2">
-          <h2 className=" text-3xl font-semibold">{course.title}</h2>
-          <p>
+          <h2
+            data-aos="fade-right"
+            data-aos-delay="500"
+            data-aos-duration="1000"
+            className=" text-3xl font-semibold"
+          >
+            {course.title}
+          </h2>
+          <p
+            data-aos="fade-right"
+            data-aos-delay="500"
+            data-aos-duration="1000"
+          >
             <span className=" font-semibold">Instructor:</span>{" "}
             {course.instructor}
           </p>
-          <p>
+          <p
+            data-aos="fade-right"
+            data-aos-delay="500"
+            data-aos-duration="1000"
+          >
             <span className=" font-semibold">Course Description:</span>{" "}
             {course.description}
           </p>
-          <p>
+          <p
+            data-aos="fade-right"
+            data-aos-delay="500"
+            data-aos-duration="1000"
+          >
             <span className="font-semibold">Enrolled Students:</span>
             {course.students}
           </p>
         </div>
 
         <div className=" space-y-2">
-          <p>
+          <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
             <span className="font-semibold">Course Duration:</span>{" "}
             {course.duration}
           </p>
-          <p>
+          <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
             <span className="font-semibold">Rating:</span> {course.rating}
           </p>
-          <p className=" text-3xl font-semibold">
+          <p
+            data-aos="fade-left"
+            data-aos-delay="500"
+            data-aos-duration="1000"
+            className=" text-3xl font-semibold"
+          >
             Price: {currencyConverter(course.price)}
           </p>
           <button
+            data-aos="fade-left"
+            data-aos-delay="500"
+            data-aos-duration="1000"
             onClick={handleEnroll}
             className="bg-black text-white py-3 px-6 rounded-lg w-full hover:bg-gray-700 duration-300"
           >

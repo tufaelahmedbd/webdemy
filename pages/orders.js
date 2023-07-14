@@ -26,7 +26,13 @@ export default function OrderPage({ session, customer }) {
 
       <div className="flex flex-wrap gap-10 ">
         {customer.orders.map((order) => (
-          <div key={order.id} className=" shadow-md rounded-lg p-5 space-y-3">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-duration="1000"
+            key={order.id}
+            className=" shadow-md rounded-lg p-5 space-y-3"
+          >
             <h2 className=" text-2xl font-bold">{order.courseTitle}</h2>
             <p className=" text-lg font-bold">
               {currencyConverter(order.amountTotal)}
